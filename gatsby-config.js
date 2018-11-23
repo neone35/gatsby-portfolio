@@ -48,5 +48,13 @@ module.exports = {
     /* Must be placed at the end */
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-129653361-1',
+        // Puts tracking script in the head instead of the body
+        head: false,
+      },
+    },
   ],
 };
