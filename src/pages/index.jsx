@@ -141,7 +141,7 @@ const Footer = styled.footer`
 const Index = () => (
   <React.Fragment>
     <SEO />
-    <Parallax pages={4}>
+    <Parallax pages={5}>
       <Divider speed={0.2} offset={0}>
         <UpDown>
           <SVG icon="triangle" className={hidden} width={48} stroke={colors.orange} left="10%" top="20%" />
@@ -274,7 +274,7 @@ const Index = () => (
         <SVG icon="box" width={12} fill={colors['grey-darkest']} left="20%" top="30%" />
         <SVG icon="hexa" width={8} stroke={colors['grey-darkest']} left="80%" top="70%" />
       </Divider>
-      <Content speed={0.4} offset={2.5}>
+      <Content speed={0.4} offset={3}>
         <Inner>
           <Title>About</Title>
           <AboutHero>
@@ -296,7 +296,7 @@ const Index = () => (
           </AboutDesc>
         </Inner>
       </Content>
-      <Content speed={0.4} offset={3}>
+      <Content speed={0.4} offset={4}>
         <Inner>
           <Title>Contact me</Title>
           <ContactText>
@@ -311,7 +311,7 @@ const Index = () => (
           &copy; 2018 by Artur Maslov with <a href="https://www.gatsbyjs.org/">Gatsby</a>.
         </Footer>
       </Content>
-      <Divider speed={0.1} offset={3}>
+      <Divider speed={0.1} offset={4}>
         <UpDown>
           <SVG icon="upDown" className={hidden} width={8} fill={colors['grey-darkest']} left="70%" top="20%" />
           <SVG icon="triangle" width={8} stroke={colors['grey-darkest']} left="25%" top="5%" />
