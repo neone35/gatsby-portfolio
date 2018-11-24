@@ -106,7 +106,7 @@ const Avatar = styled.img`
 
 const ButtonOutlined = styled.button`
   ${tw(
-    'bg-transparent hover:bg-blue-dark text-blue-dark font-semibold text-lg hover:text-white py-3 px-8 border-2 border-blue-dark hover:border-transparent rounded cursor-pointer'
+    'bg-transparent hover:bg-blue-dark text-blue-dark font-semibold text-lg hover:text-white py-3 px-6 border-2 border-blue-dark hover:border-transparent rounded-full cursor-pointer'
   )};
 `;
 
@@ -138,12 +138,10 @@ const Footer = styled.footer`
   }
 `;
 
-const show = 'item';
-
 const Index = () => (
   <React.Fragment>
     <SEO />
-    <Parallax pages={5}>
+    <Parallax pages={4}>
       <Divider speed={0.2} offset={0}>
         <UpDown>
           <SVG icon="triangle" className={hidden} width={48} stroke={colors.orange} left="10%" top="20%" />
@@ -175,7 +173,7 @@ const Index = () => (
         <Hero>
           <BigTitle>
             Hi, I'm
-            <TypistLoop interval={2000}>
+            <TypistLoop interval={1500}>
               {['Artur Maslov', 'Web developer', 'Android developer'].map(text => (
                 <Typist key={text} startDelay={100}>
                   {text}
@@ -192,8 +190,8 @@ const Index = () => (
       <DividerMiddle
         bg="linear-gradient(to right, SlateBlue 0%, DeepSkyBlue 100%)"
         speed={-0.2}
-        offset={0.6}
-        factor={1.5}
+        offset={0.5}
+        factor={2}
       />
       <Content speed={0.4} offset={0.9} factor={2}>
         <Inner>
@@ -202,7 +200,7 @@ const Index = () => (
             <ProjectCard
               title="Rearn"
               link="https://github.com/neone35/rearn"
-              bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
+              bg="linear-gradient(to right, #00BCD4 0%, #2196F3 100%)"
               tech="React &#9656; NextJS &#9656; PassportJS &#9656; Mongo &#9656; Bootstrap"
             >
               Flashcard PWA application built with MERN stack (bachelor thesis project)
@@ -210,10 +208,26 @@ const Index = () => (
             <ProjectCard
               title="Enalyzer"
               link="https://github.com/neone35/enalyzer"
-              bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
+              bg="linear-gradient(to right, #4CAF50 0%, #8BC34A 100%)"
               tech="Firebase MLkit &#9656; Architecture components &#9656; Camera API &#9656; Material design"
             >
               Easily recognize food additive codes in real time using phone camera
+            </ProjectCard>
+            <ProjectCard
+              title="Geowords"
+              link="https://github.com/neone35/geowords"
+              bg="linear-gradient(to right, #4CAF50 0%, #8BC34A 100%)"
+              tech="MVP &#9656; RxJava &#9656; Google Maps &#9656; Parceler"
+            >
+              Allows to associate user input with markers on the map
+            </ProjectCard>
+            <ProjectCard
+              title="Chargent"
+              link="https://github.com/neone35/chargent"
+              bg="linear-gradient(to right, #4CAF50 0%, #8BC34A 100%)"
+              tech="MVVM &#9656; RxJava &#9656; Custom views"
+            >
+              Allows to associate user input with markers on the map
             </ProjectCard>
           </ProjectsWrapper>
         </Inner>
@@ -264,7 +278,7 @@ const Index = () => (
         <Inner>
           <Title>About</Title>
           <AboutHero>
-            <Avatar src={avatar} alt="John Doe" />
+            <Avatar src={avatar} alt="Artur Maslov" />
             <AboutSub>
               Passion in coding and cycling. <br /> Working hard, dreaming big. <br /> Doing what is right, not what is
               easy.
@@ -282,23 +296,7 @@ const Index = () => (
           </AboutDesc>
         </Inner>
       </Content>
-      <Divider fill="#23262b" speed={0.2} offset={3.0}>
-        <WaveWrapper>
-          <InnerWave>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 338.05" preserveAspectRatio="none">
-              <path className={waveAnimation}>
-                <animate
-                  attributeName="d"
-                  values="M 0 100 Q 250 50 400 200 Q 550 350 800 300 L 800 0 L 0 0 L 0 100 Z;M 0 100 Q 200 150 400 200 Q 600 250 800 300 L 800 0 L 0 0 L 0 100 Z;M 0 100 Q 150 350 400 200 Q 650 50 800 300 L 800 0 L 0 0 L 0 100 Z"
-                  repeatCount="indefinite"
-                  dur="30s"
-                />
-              </path>
-            </svg>
-          </InnerWave>
-        </WaveWrapper>
-      </Divider>
-      <Content speed={0.4} offset={4}>
+      <Content speed={0.4} offset={3}>
         <Inner>
           <Title>Contact me</Title>
           <ContactText>
@@ -313,7 +311,7 @@ const Index = () => (
           &copy; 2018 by Artur Maslov with <a href="https://www.gatsbyjs.org/">Gatsby</a>.
         </Footer>
       </Content>
-      <Divider speed={0.1} offset={4}>
+      <Divider speed={0.1} offset={3}>
         <UpDown>
           <SVG icon="upDown" className={hidden} width={8} fill={colors['grey-darkest']} left="70%" top="20%" />
           <SVG icon="triangle" width={8} stroke={colors['grey-darkest']} left="25%" top="5%" />
