@@ -4,6 +4,9 @@ import styled from 'react-emotion';
 import 'typeface-cantata-one';
 import 'typeface-open-sans';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
+import { Transition } from 'react-spring/dist/web';
+import Typist from 'react-typist';
+import TypistLoop from 'react-typist-loop';
 import SEO from '../components/SEO';
 import SVG from '../components/SVG';
 import ProjectCard from '../components/ProjectCard';
@@ -41,7 +44,7 @@ const Inner = styled.div`
 `;
 
 const BigTitle = styled.h1`
-  ${tw('text-5xl lg:text-6xl font-serif text-white mb-6 tracking-wide')};
+  ${tw('text-4xl lg:text-5xl font-serif text-white mb-6 tracking-wide')};
   text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
 `;
 
@@ -62,7 +65,7 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.p`
-  ${tw('text-2xl lg:text-4xl font-sans text-white mt-8 xxl:w-3/4')};
+  ${tw('text-xl lg:text-3xl font-sans text-white mt-8 xxl:w-3/4')};
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
 `;
 
@@ -103,7 +106,7 @@ const Avatar = styled.img`
 
 const ButtonOutlined = styled.button`
   ${tw(
-    'bg-transparent hover:bg-blue text-blue-dark font-semibold hover:text-white py-3 px-6 border border-blue hover:border-transparent rounded cursor-pointer'
+    'bg-transparent hover:bg-blue-dark text-blue-dark font-semibold text-lg hover:text-white py-3 px-8 border-2 border-blue-dark hover:border-transparent rounded cursor-pointer'
   )};
 `;
 
@@ -134,6 +137,8 @@ const Footer = styled.footer`
     text-decoration: none;
   }
 `;
+
+const show = 'item';
 
 const Index = () => (
   <React.Fragment>
@@ -169,9 +174,16 @@ const Index = () => (
       <Content speed={0.4} offset={0}>
         <Hero>
           <BigTitle>
-            Hey, <br /> I'm Artur Maslov.
+            Hi, I'm
+            <TypistLoop interval={2000}>
+              {['Artur Maslov', 'Web developer', 'Android developer'].map(text => (
+                <Typist key={text} startDelay={100}>
+                  {text}
+                </Typist>
+              ))}
+            </TypistLoop>
           </BigTitle>
-          <Subtitle>I build websites, web & native {<Image src={android} alt="Android" />} apps.</Subtitle>
+          <Subtitle>Scroll down to find out more.</Subtitle>
           <form action="https://drive.google.com/file/d/12EOh4LaIgndtEr8x3ZyQsS6kB1mKW_wm/view?usp=sharing">
             <ButtonOutlined type="submit">CV</ButtonOutlined>
           </form>
@@ -254,18 +266,19 @@ const Index = () => (
           <AboutHero>
             <Avatar src={avatar} alt="John Doe" />
             <AboutSub>
-              Passion in coding and cycling. <br /> Working hard, dreaming big. <br /> Doing what is right, not what is easy.
+              Passion in coding and cycling. <br /> Working hard, dreaming big. <br /> Doing what is right, not what is
+              easy.
             </AboutSub>
           </AboutHero>
           <AboutDesc>
-            I am highly motivated person. My idol is Elon Musk. He is exceptionally straightforward and never gives up.
-            I have a high pain threshold to solve important problems. During the childhood I solved problems with lego
-            bricks and drew lots of mechanical creations. My language skills include Russian, Polish, Lithuanian,
-            English. This helps me to consume information from multiple languages. I love to help people solve their
-            problems in IT and make world step forward faster to brighter future. I took courses about human brain,
-            neural links, which helps me to learn most effective way. I am active person – I ride bicycle every day, try
-            to walk more than 5km per day and take frequent brakes while developing. You can see my skills in experience
-            section.
+            I am a highly motivated person. My idol is Elon Musk. He is exceptionally straightforward and never gives
+            up. I have a high pain threshold to solve important problems. During my childhood I solved problems with
+            lego bricks and drew lots of mechanical creations. My language skills include Russian, Polish, Lithuanian,
+            English. This helps me consume information from multiple sources. I love to help people solve their problems
+            in IT and make the world step forward faster towards a brighter future. I took courses about the human
+            brain, neural links, which helps me learn in the most effective way. I am an active person – I ride my
+            bicycle every day, try to walk more than 5km per day and take frequent breaks while developing. You can find
+            out more <b>&#9660;</b> or download my CV <b>&#9650;</b>.
           </AboutDesc>
         </Inner>
       </Content>
@@ -290,14 +303,14 @@ const Index = () => (
           <Title>Contact me</Title>
           <ContactText>
             Say <a href="mailto:aartasas@gmail.com">Hi</a> or find me on other platforms:{' '}
-            <a href="https://github.com/neone35">Github</a>{', '}
+            <a href="https://github.com/neone35">Github</a>
+            {', '}
             <a href="https://www.behance.net/neleon">Behance</a> or{' '}
             <a href="https://www.linkedin.com/in/neomaslov/">LinkedIn</a>
           </ContactText>
         </Inner>
         <Footer>
-          &copy; 2018 by Artur Maslov with {' '}
-          <a href="https://www.gatsbyjs.org/">Gatsby</a>.
+          &copy; 2018 by Artur Maslov with <a href="https://www.gatsbyjs.org/">Gatsby</a>.
         </Footer>
       </Content>
       <Divider speed={0.1} offset={4}>

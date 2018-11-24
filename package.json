@@ -27,6 +27,8 @@
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
     "react-spring": "^6.1.8",
+    "react-typist": "^2.0.4",
+    "react-typist-loop": "0.0.5",
     "tailwindcss": "^0.6.6",
     "typeface-cantata-one": "^0.0.54",
     "typeface-open-sans": "^0.0.54"
