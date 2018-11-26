@@ -5,6 +5,7 @@ import 'typeface-cantata-one';
 import 'typeface-open-sans';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
 import { Transition } from 'react-spring/dist/web';
+import { SocialIcon } from 'react-social-icons';
 import Typist from 'react-typist';
 import TypistLoop from 'react-typist-loop';
 import SEO from '../components/SEO';
@@ -83,6 +84,10 @@ const ProjectsWrapper = styled.div`
   }
 `;
 
+const SocialWrapper = styled.div`
+  ${tw('fixed pin-r w-16 z-10 md:mr-6 opacity-50')};
+`;
+
 const WaveWrapper = styled.div`
   ${tw('absolute pin-b w-full')};
   transform: matrix(1, 0, 0, -1, 0, 0);
@@ -138,9 +143,24 @@ const Footer = styled.footer`
   }
 `;
 
+const socialIconStyle = {
+  marginBottom: '0.5rem',
+};
+const socialIconFirstStyle = {
+  marginBottom: '0.5rem',
+  marginTop: '1.25rem',
+};
+
 const Index = () => (
   <React.Fragment>
     <SEO />
+    <SocialWrapper>
+      <SocialIcon style={socialIconFirstStyle} url="https://github.com/neone35/" />
+      <SocialIcon style={socialIconStyle} url="https://www.behance.net/neleon" />
+      <SocialIcon style={socialIconStyle} url="https://www.linkedin.com/in/neomaslov/" />
+      <SocialIcon style={socialIconStyle} url="https://www.facebook.com/artur.maslov" />
+      <SocialIcon style={socialIconStyle} url="https://twitter.com/neonartur" />
+    </SocialWrapper>
     <Parallax pages={5}>
       <Divider speed={0.2} offset={0}>
         <UpDown>
@@ -162,7 +182,7 @@ const Index = () => (
         <SVG icon="upDown" width={8} fill={colors['grey-darkest']} left="95%" top="90%" />
         <SVG icon="upDown" className={hidden} width={24} fill={colors['grey-darker']} left="40%" top="80%" />
         <SVG icon="triangle" width={8} stroke={colors['grey-darker']} left="25%" top="5%" />
-        <SVG icon="circle" width={64} fill={colors.green} left="95%" top="5%" />
+        {/* <SVG icon="circle" width={64} fill={colors.green} left="95%" top="15%" /> */}
         <SVG icon="box" className={hidden} width={64} fill={colors.purple} left="5%" top="90%" />
         <SVG icon="box" width={6} fill={colors['grey-darkest']} left="10%" top="10%" />
         <SVG icon="box" width={12} fill={colors['grey-darkest']} left="40%" top="30%" />
@@ -300,11 +320,7 @@ const Index = () => (
         <Inner>
           <Title>Contact me</Title>
           <ContactText>
-            Say <a href="mailto:aartasas@gmail.com">Hi</a> or find me on other platforms:{' '}
-            <a href="https://github.com/neone35">Github</a>
-            {', '}
-            <a href="https://www.behance.net/neleon">Behance</a> or{' '}
-            <a href="https://www.linkedin.com/in/neomaslov/">LinkedIn</a>
+            Write a letter at <a href="mailto:aartasas@gmail.com">Gmail</a>
           </ContactText>
         </Inner>
         <Footer>
