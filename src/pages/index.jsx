@@ -109,9 +109,15 @@ const Avatar = styled.img`
   ${tw('rounded-full w-32 xl:w-48 shadow-lg h-auto')};
 `;
 
-const ButtonOutlined = styled.button`
+const ButtonOutlinedBlue = styled.button`
   ${tw(
     'bg-transparent hover:bg-blue-dark text-blue-dark font-semibold text-lg hover:text-white py-3 px-6 border-2 border-blue-dark hover:border-transparent rounded-full cursor-pointer'
+  )};
+`;
+
+const ButtonOutlinedOrange = styled.button`
+  ${tw(
+    'bg-transparent hover:bg-orange-dark text-orange-dark font-semibold text-lg hover:text-white py-3 px-6 border-2 border-orange-dark hover:border-transparent rounded-full cursor-pointer'
   )};
 `;
 
@@ -202,9 +208,20 @@ const Index = () => (
             </TypistLoop>
           </BigTitle>
           <Subtitle>Scroll down to find out more.</Subtitle>
-          <form action="https://drive.google.com/file/d/12EOh4LaIgndtEr8x3ZyQsS6kB1mKW_wm/view?usp=sharing">
-            <ButtonOutlined type="submit">CV</ButtonOutlined>
-          </form>
+          <div>
+            <form
+              style={{ display: 'inline', marginRight: '10px'}}
+              action="https://drive.google.com/file/d/1xSJ0pVi3kk_mozaexTrUvY09X7rS3QaJ/view?usp=sharing"
+            >
+              <ButtonOutlinedBlue type="submit">Detailed CV</ButtonOutlinedBlue>
+            </form>
+            <form
+              style={{ display: 'inline' }}
+              action="https://drive.google.com/file/d/12EOh4LaIgndtEr8x3ZyQsS6kB1mKW_wm/view?usp=sharing"
+            >
+              <ButtonOutlinedOrange type="submit">One page CV</ButtonOutlinedOrange>
+            </form>
+          </div>
         </Hero>
       </Content>
       <DividerMiddle
@@ -247,7 +264,7 @@ const Index = () => (
               bg="linear-gradient(to right, #4CAF50 0%, #8BC34A 100%)"
               tech="MVVM &#9656; RxJava &#9656; Custom views"
             >
-              Allows to associate user input with markers on the map
+              Lithuanian electric car rent service "Spark" application alternative implementation
             </ProjectCard>
           </ProjectsWrapper>
         </Inner>
